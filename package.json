@@ -15,10 +15,13 @@
   "author": { "name": "StoreInspect", "email": "support@storeinspect.com" },
   "repository": {
     "type": "git",
-    "url": "https://github.com/StoreInspect/n8n-nodes-storeinspect.git"
+    "url": "git+https://github.com/StoreInspect/n8n-nodes-storeinspect.git"
   },
   "bugs": {
     "url": "https://github.com/StoreInspect/n8n-nodes-storeinspect/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "n8n-node build",

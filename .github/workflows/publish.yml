@@ -21,9 +21,7 @@ jobs:
       - run: npm install --global npm@latest
       - run: npm ci
       - run: npm test
-      - run: npm run lint
-      - run: npm run build
-      - run: npm publish --access public --provenance
+      - run: npm run release
         env:
           # Needed only for the first publish. Remove the repository secret after
           # configuring this package's npm Trusted Publisher.
