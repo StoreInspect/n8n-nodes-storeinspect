@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-storeinspect",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Sales", "Marketing", "Data & Storage"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://storeinspect.com/docs/integrations/n8n"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/StoreInspect/n8n-nodes-storeinspect#readme"
+			}
+		]
+	}
+}

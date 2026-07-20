@@ -1,0 +1,52 @@
+{
+  "name": "n8n-nodes-storeinspect",
+  "version": "0.1.0",
+  "description": "Official n8n community node for searching and enriching Shopify stores and contacts with StoreInspect.",
+  "license": "MIT",
+  "homepage": "https://storeinspect.com",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "shopify",
+    "lead-generation",
+    "sales-intelligence",
+    "storeinspect"
+  ],
+  "author": { "name": "StoreInspect", "email": "support@storeinspect.com" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StoreInspect/n8n-nodes-storeinspect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/StoreInspect/n8n-nodes-storeinspect/issues"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "test": "vitest run --globals .tests/GenericFunctions.test.ts",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": ["dist", "!dist/tsconfig.tsbuildinfo"],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": ["dist/credentials/StoreInspectApi.credentials.js"],
+    "nodes": ["dist/nodes/StoreInspect/StoreInspect.node.js"]
+  },
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "^0.39.3",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "release-it": "^19.0.4",
+    "typescript": "5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": { "n8n-workflow": "*" }
+}
