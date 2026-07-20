@@ -1,10 +1,10 @@
-# n8n-nodes-storeinspect
+# @storeinspect/n8n-nodes-storeinspect
 
 This is the official [n8n](https://n8n.io/) community node for [StoreInspect](https://storeinspect.com). It lets n8n workflows search and enrich Shopify stores, find decision-maker contacts, and reveal verified contact details.
 
 ## Installation
 
-Install `n8n-nodes-storeinspect` from **Settings > Community Nodes** in a self-hosted n8n instance. Once the package is verified, it can also be installed from the n8n nodes panel.
+Install `@storeinspect/n8n-nodes-storeinspect` from **Settings > Community Nodes** in a self-hosted n8n instance. Once the package is verified, it can also be installed from the n8n nodes panel.
 
 See n8n's [community-node installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) for details.
 

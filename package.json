@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-storeinspect",
+  "name": "@storeinspect/n8n-nodes-storeinspect",
   "version": "0.1.0",
   "description": "Official n8n community node for searching and enriching Shopify stores and contacts with StoreInspect.",
   "license": "MIT",
