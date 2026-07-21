@@ -1,6 +1,6 @@
 {
   "name": "@storeinspect/n8n-nodes-storeinspect",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official n8n community node for searching and enriching Shopify stores and contacts with StoreInspect.",
   "license": "MIT",
   "homepage": "https://storeinspect.com",
@@ -12,7 +12,10 @@
     "sales-intelligence",
     "storeinspect"
   ],
-  "author": { "name": "StoreInspect", "email": "support@storeinspect.com" },
+  "author": {
+    "name": "StoreInspect",
+    "email": "support@storeinspect.com"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/StoreInspect/n8n-nodes-storeinspect.git"
@@ -33,12 +36,21 @@
     "release": "n8n-node release",
     "prepublishOnly": "n8n-node prerelease"
   },
-  "files": ["dist", "!dist/tsconfig.tsbuildinfo"],
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "dist/**/*.json",
+    "dist/**/*.svg"
+  ],
   "n8n": {
     "n8nNodesApiVersion": 1,
     "strict": true,
-    "credentials": ["dist/credentials/StoreInspectApi.credentials.js"],
-    "nodes": ["dist/nodes/StoreInspect/StoreInspect.node.js"]
+    "credentials": [
+      "dist/credentials/StoreInspectApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/StoreInspect/StoreInspect.node.js"
+    ]
   },
   "engines": {
     "node": ">=22 <25"
@@ -51,5 +63,7 @@
     "typescript": "5.9.2",
     "vitest": "^3.2.4"
   },
-  "peerDependencies": { "n8n-workflow": "*" }
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
 }
