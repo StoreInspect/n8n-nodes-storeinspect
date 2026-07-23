@@ -1,8 +1,8 @@
 {
-	"node": "n8n-nodes-storeinspect",
+	"node": "@storeinspect/n8n-nodes-storeinspect.storeInspect",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
-	"categories": ["Sales", "Marketing", "Data & Storage"],
+	"categories": ["Sales", "Marketing & Content", "Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
