@@ -1,0 +1,7 @@
+{
+	"name": "unapproved-lifecycle-fixture",
+	"version": "1.0.0",
+	"scripts": {
+		"postinstall": "node unexpected.js"
+	}
+}

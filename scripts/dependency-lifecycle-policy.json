@@ -1,0 +1,71 @@
+{
+	"schemaVersion": 1,
+	"rootScripts": {
+		"preinstall": null,
+		"install": null,
+		"postinstall": null,
+		"prepare": null,
+		"prebuild": null,
+		"build": "n8n-node build",
+		"postbuild": null,
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"packages": [
+		{
+			"name": "cpu-features",
+			"version": "0.0.10",
+			"action": "skip",
+			"optional": true,
+			"scripts": {
+				"install": "node buildcheck.js > buildcheck.gypi && node-gyp rebuild"
+			},
+			"reason": "Optional ssh2 CPU acceleration. The script invokes a shell, writes build metadata, and compiles native code; ssh2 has a JavaScript fallback, so this is not required."
+		},
+		{
+			"name": "esbuild",
+			"version": "0.28.1",
+			"action": "skip",
+			"scripts": {
+				"postinstall": "node install.js"
+			},
+			"reason": "The installed platform package already provides the required binary. The script can run npm install or download from the npm registry when that optional package is missing, so it remains blocked."
+		},
+		{
+			"name": "eslint-plugin-n8n-nodes-base",
+			"version": "1.16.7",
+			"action": "skip",
+			"scripts": {
+				"preinstall": "npx only-allow pnpm"
+			},
+			"reason": "Package-manager enforcement for the dependency's own development. It is incompatible with this npm repository and npx may download a package, so it remains blocked."
+		},
+		{
+			"name": "isolated-vm",
+			"version": "6.1.2",
+			"action": "rebuild",
+			"scripts": {
+				"install": "node-gyp-build || node-gyp rebuild --release -j max"
+			},
+			"reason": "Required native runtime used transitively by the n8n development toolchain. The package ships Node 22 ABI prebuilds; the rebuild runner proves the native module loads before invoking this targeted rebuild, preventing the compile fallback from being reached.",
+			"verifyModule": "isolated-vm"
+		},
+		{
+			"name": "ssh2",
+			"version": "1.15.0",
+			"action": "skip",
+			"scripts": {
+				"install": "node install.js"
+			},
+			"reason": "Builds an optional native crypto binding through a shell and node-gyp. ssh2 loads and uses its JavaScript implementation without the binding, so the build is not required."
+		},
+		{
+			"name": "unrs-resolver",
+			"version": "1.12.2",
+			"action": "skip",
+			"scripts": {
+				"postinstall": "node postinstall.js"
+			},
+			"reason": "The installed platform-specific optional dependency already provides the native binding. The fallback can run npm install or download a tarball, so it remains blocked."
+		}
+	]
+}

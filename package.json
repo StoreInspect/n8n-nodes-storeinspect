@@ -29,10 +29,14 @@
   "scripts": {
     "build": "n8n-node build",
     "build:watch": "tsc --watch",
+    "deps:audit": "node scripts/audit-dependency-lifecycle.mjs",
+    "deps:rebuild": "node scripts/rebuild-approved-dependencies.mjs",
     "dev": "n8n-node dev",
     "lint": "n8n-node lint",
     "lint:fix": "n8n-node lint --fix",
+    "security:audit-root": "node scripts/audit-root-lifecycle.mjs",
     "test": "vitest run --globals .tests/GenericFunctions.test.ts",
+    "verify:runtime": "node scripts/verify-runtime.mjs",
     "release": "n8n-node release",
     "prepublishOnly": "n8n-node prerelease"
   },
@@ -55,6 +59,7 @@
   "engines": {
     "node": ">=22 <25"
   },
+  "packageManager": "npm@10.9.8",
   "devDependencies": {
     "@n8n/node-cli": "^0.39.3",
     "eslint": "9.32.0",
