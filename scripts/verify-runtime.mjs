@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 
-const expectedNode = 'v22.23.2';
+const expectedNode = 'v22.23.4';
 const expectedNpm = '10.9.8';
 const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 const actualNpm = execFileSync(npmCommand, ['--version'], { encoding: 'utf8' }).trim();

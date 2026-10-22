@@ -14,7 +14,10 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
-          node-version: '22.23.2'
+          node-version: '22.23.4'
+      - name: Enable pinned npm
+        run: corepack enable npm && corepack prepare npm@10.9.8 --activate
+
       - name: Verify Node.js and npm
         run: node scripts/verify-runtime.mjs
       - name: Install dependencies without lifecycle scripts
@@ -50,10 +53,13 @@ jobs:
     steps:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
-          node-version: '22.23.2'
+          node-version: '22.23.4'
           registry-url: 'https://registry.npmjs.org/'
+      - name: Enable pinned npm
+        run: corepack enable npm && corepack prepare npm@10.9.8 --activate
+
       - name: Verify Node.js and npm
-        run: test "$(node --version)" = 'v22.23.2' && test "$(npm --version)" = '10.9.8'
+        run: test "$(node --version)" = 'v22.23.4' && test "$(npm --version)" = '10.9.8'
       - name: Download validated package tarball
         uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
         with:
